@@ -1,0 +1,6 @@
+name: ExtraMMO
+version: '${project.version}'
+main: me.derpy.extrammo.Main
+api-version: 1.17
+authors: [ derpy588 ]
+description: This is a MMO plugin that has all kinds of features
