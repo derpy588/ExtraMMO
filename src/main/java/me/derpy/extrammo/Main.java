@@ -1,6 +1,7 @@
 package me.derpy.extrammo;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import redempt.redlib.sql.SQLHelper;
 
 public final class Main extends JavaPlugin {
     //Stuff to do
@@ -11,7 +12,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        SQLHelper sql = new DatabaseManager().init(this);
 
     }
 
