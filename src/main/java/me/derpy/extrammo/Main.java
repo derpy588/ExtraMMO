@@ -10,6 +10,8 @@ public final class Main extends JavaPlugin {
     //TODO: Crafting Recipe Builder
     //TODO: Mob Level System
 
+    public SQLHelper sql;
+
     @Override
     public void onEnable() {
         SQLHelper sql = new DatabaseManager().init(this);
