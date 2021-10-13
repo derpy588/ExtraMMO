@@ -1,5 +1,6 @@
 package me.derpy.extrammo;
 
+import me.derpy.extrammo.Stats.StatsSystem;
 import org.bukkit.plugin.java.JavaPlugin;
 import redempt.redlib.sql.SQLHelper;
 
@@ -11,10 +12,13 @@ public final class Main extends JavaPlugin {
     //TODO: Mob Level System
 
     public SQLHelper sql;
+    public StatsSystem statsSystem;
 
     @Override
     public void onEnable() {
         SQLHelper sql = new DatabaseManager().init(this);
+        StatsSystem statsSystem = new StatsSystem();
+        statsSystem.init(this);
 
     }
 
