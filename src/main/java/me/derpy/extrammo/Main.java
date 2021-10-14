@@ -16,7 +16,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        SQLHelper sql = new DatabaseManager().init(this);
+        sql = new DatabaseManager().init(this);
         StatsSystem statsSystem = new StatsSystem();
         statsSystem.init(this);
 
