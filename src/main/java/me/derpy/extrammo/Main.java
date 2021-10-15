@@ -1,5 +1,6 @@
 package me.derpy.extrammo;
 
+import me.derpy.extrammo.Listeners.PlayerJoin;
 import me.derpy.extrammo.Stats.StatsSystem;
 import org.bukkit.plugin.java.JavaPlugin;
 import redempt.redlib.sql.SQLHelper;
@@ -19,6 +20,7 @@ public final class Main extends JavaPlugin {
         sql = new DatabaseManager().init(this);
         StatsSystem statsSystem = new StatsSystem();
         statsSystem.init(this);
+        this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
 
     }
 
