@@ -9,12 +9,15 @@ import org.bukkit.event.player.PlayerJoinEvent;
 public class PlayerJoin implements Listener {
 
     public Main plugin;
-    public void PlayerJoin(Main pl) {
-        plugin = pl;
+
+    public PlayerJoin(Main pl) {
+        plugin=pl;
     }
+
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        plugin.statsSystem.getPlayerDataFromDatabase(plugin, event.getPlayer());
+        plugin.getServer().broadcastMessage(plugin.statsSystem.getPlayerStats(event.getPlayer()).toString());
+        plugin.getServer().broadcastMessage(plugin.statsSystem.getPlayerSkills(event.getPlayer()).toString());
     }
 }

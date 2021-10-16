@@ -18,14 +18,13 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         sql = new DatabaseManager().init(this);
-        StatsSystem statsSystem = new StatsSystem();
+        statsSystem = new StatsSystem();
         statsSystem.init(this);
-        this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerJoin(this), this);
 
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
     }
 }
