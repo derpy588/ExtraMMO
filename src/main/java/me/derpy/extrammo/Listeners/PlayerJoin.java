@@ -17,7 +17,7 @@ public class PlayerJoin implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        plugin.getServer().broadcastMessage(plugin.statsSystem.getPlayerStats(event.getPlayer()).toString());
-        plugin.getServer().broadcastMessage(plugin.statsSystem.getPlayerSkills(event.getPlayer()).toString());
+        plugin.statsSystem.getPlayerStats(event.getPlayer());
+        plugin.statsSystem.getPlayerSkills(event.getPlayer());
     }
 }

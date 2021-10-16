@@ -36,8 +36,8 @@ public class StatsSystem {
     public void init(Main plugin) {
         //Stats
         plugin.sql.execute("CREATE TABLE IF NOT EXISTS Stats (uuid STRING PRIMARY KEY, strength INT, health INT, regeneration INT, luck INT, wisdom INT, toughness INT);");
-        //Skills
-        plugin.sql.execute("CREATE TABLE IF NOT EXISTS Skills (uuid STRING PRIMARY KEY, farming INT, foraging INT, mining INT, fishing INT, excavation INT, archery INT, defense INT, fighting INT, endurance INT, agility INT, alchemy INT, enchanting INT, healing INT, forging INT");
+
+
         //Stats
         strength = plugin.sql.createCache("Stats", "strength", "uuid");
         health = plugin.sql.createCache("Stats", "health", "uuid");
@@ -47,6 +47,8 @@ public class StatsSystem {
         toughness = plugin.sql.createCache("Stats", "toughness", "uuid");
 
         //Skills
+        plugin.sql.execute("CREATE TABLE IF NOT EXISTS Skills (uuid STRING PRIMARY KEY, farming INT, foraging INT, mining INT, fishing INT, excavation INT, archery INT, defense INT, fighting INT, endurance INT, agility INT, alchemy INT, enchanting INT, healing INT, forging INT);");
+
         farming = plugin.sql.createCache("Skills", "farming", "uuid");
         foraging = plugin.sql.createCache("Skills", "foraging", "uuid");
         mining = plugin.sql.createCache("Skills", "mining", "uuid");
